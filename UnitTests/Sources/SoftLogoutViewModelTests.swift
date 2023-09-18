@@ -20,7 +20,7 @@ import XCTest
 
 class SoftLogoutViewModelTests: XCTestCase {
     let credentials = SoftLogoutScreenCredentials(userID: "mock_user_id",
-                                                  homeserverName: "https://matrix.org",
+                                                  homeserverName: "https://superhero.com",
                                                   userDisplayName: "mock_username",
                                                   deviceID: "ABCDEFGH")
     

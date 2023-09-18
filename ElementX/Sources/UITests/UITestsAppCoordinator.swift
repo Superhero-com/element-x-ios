@@ -132,8 +132,8 @@ class MockScreen: Identifiable {
             navigationStackCoordinator.setRootCoordinator(coordinator)
             return navigationStackCoordinator
         case .softLogout:
-            let credentials = SoftLogoutScreenCredentials(userID: "@mock:matrix.org",
-                                                          homeserverName: "matrix.org",
+            let credentials = SoftLogoutScreenCredentials(userID: "@mock:superhero.com",
+                                                          homeserverName: "superhero.com",
                                                           userDisplayName: "mock",
                                                           deviceID: "ABCDEFGH")
             return SoftLogoutScreenCoordinator(parameters: .init(authenticationService: MockAuthenticationServiceProxy(),
@@ -159,7 +159,7 @@ class MockScreen: Identifiable {
             return navigationStackCoordinator
         case .home:
             let navigationStackCoordinator = NavigationStackCoordinator()
-            let session = MockUserSession(clientProxy: MockClientProxy(userID: "@mock:matrix.org"),
+            let session = MockUserSession(clientProxy: MockClientProxy(userID: "@mock:superhero.com"),
                                           mediaProvider: MockMediaProvider())
             let coordinator = HomeScreenCoordinator(parameters: .init(userSession: session,
                                                                       attributedStringBuilder: AttributedStringBuilder(permalinkBaseURL: ServiceLocator.shared.settings.permalinkBaseURL),
@@ -202,7 +202,7 @@ class MockScreen: Identifiable {
         case .notificationSettingsScreen:
             let userNotificationCenter = UserNotificationCenterMock()
             userNotificationCenter.authorizationStatusReturnValue = .denied
-            let session = MockUserSession(clientProxy: MockClientProxy(userID: "@mock:matrix.org"),
+            let session = MockUserSession(clientProxy: MockClientProxy(userID: "@mock:superhero.com"),
                                           mediaProvider: MockMediaProvider())
             let parameters = NotificationSettingsScreenCoordinatorParameters(userSession: session,
                                                                              userNotificationCenter: userNotificationCenter,
@@ -212,7 +212,7 @@ class MockScreen: Identifiable {
         case .notificationSettingsScreenMismatchConfiguration:
             let userNotificationCenter = UserNotificationCenterMock()
             userNotificationCenter.authorizationStatusReturnValue = .denied
-            let session = MockUserSession(clientProxy: MockClientProxy(userID: "@mock:matrix.org"),
+            let session = MockUserSession(clientProxy: MockClientProxy(userID: "@mock:superhero.com"),
                                           mediaProvider: MockMediaProvider())
             let notificationSettings = NotificationSettingsProxyMock(with: .init())
             notificationSettings.getDefaultRoomNotificationModeIsEncryptedIsOneToOneClosure = { isEncrypted, isOneToOne in

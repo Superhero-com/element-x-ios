@@ -26,7 +26,7 @@ enum MockServerSelectionScreenState: CaseIterable {
     @MainActor var viewModel: ServerSelectionScreenViewModel {
         switch self {
         case .matrix:
-            return ServerSelectionScreenViewModel(homeserverAddress: "https://matrix.org",
+            return ServerSelectionScreenViewModel(homeserverAddress: "https://superhero.com",
                                                   slidingSyncLearnMoreURL: ServiceLocator.shared.settings.slidingSyncLearnMoreURL,
                                                   isModallyPresented: true)
                                                   
@@ -41,7 +41,7 @@ enum MockServerSelectionScreenState: CaseIterable {
             viewModel.displayError(.footerMessage(L10n.errorUnknown))
             return viewModel
         case .nonModal:
-            return ServerSelectionScreenViewModel(homeserverAddress: "https://matrix.org",
+            return ServerSelectionScreenViewModel(homeserverAddress: "https://superhero.com",
                                                   slidingSyncLearnMoreURL: ServiceLocator.shared.settings.slidingSyncLearnMoreURL,
                                                   isModallyPresented: false)
         }

@@ -22,7 +22,7 @@ import XCTest
 
 class MatrixEntityRegexTests: XCTestCase {
     func testHomeserver() {
-        XCTAssertTrue(MatrixEntityRegex.isMatrixHomeserver("matrix.org"))
+        XCTAssertTrue(MatrixEntityRegex.isMatrixHomeserver("superhero.com"))
         XCTAssertTrue(MatrixEntityRegex.isMatrixHomeserver("MATRIX.ORG"))
         XCTAssertFalse(MatrixEntityRegex.isMatrixHomeserver("matrix?.org"))
     }
@@ -34,15 +34,15 @@ class MatrixEntityRegexTests: XCTestCase {
     }
 
     func testRoomAlias() {
-        XCTAssertTrue(MatrixEntityRegex.isMatrixRoomAlias("#element-ios:matrix.org"))
-        XCTAssertFalse(MatrixEntityRegex.isMatrixRoomAlias("element-ios:matrix.org"))
-        XCTAssertFalse(MatrixEntityRegex.isMatrixRoomAlias("#element-ios.matrix.org"))
+        XCTAssertTrue(MatrixEntityRegex.isMatrixRoomAlias("#element-ios:superhero.com"))
+        XCTAssertFalse(MatrixEntityRegex.isMatrixRoomAlias("element-ios:superhero.com"))
+        XCTAssertFalse(MatrixEntityRegex.isMatrixRoomAlias("#element-ios.superhero.com"))
     }
 
     func testRoomId() {
-        XCTAssertTrue(MatrixEntityRegex.isMatrixRoomIdentifier("!pMBteVpcoJRdCJxDmn:matrix.org"))
-        XCTAssertFalse(MatrixEntityRegex.isMatrixRoomIdentifier("pMBteVpcoJRdCJxDmn:matrix.org"))
-        XCTAssertFalse(MatrixEntityRegex.isMatrixRoomIdentifier("!pMBteVpcoJRdCJxDmn.matrix.org"))
+        XCTAssertTrue(MatrixEntityRegex.isMatrixRoomIdentifier("!pMBteVpcoJRdCJxDmn:superhero.com"))
+        XCTAssertFalse(MatrixEntityRegex.isMatrixRoomIdentifier("pMBteVpcoJRdCJxDmn:superhero.com"))
+        XCTAssertFalse(MatrixEntityRegex.isMatrixRoomIdentifier("!pMBteVpcoJRdCJxDmn.superhero.com"))
     }
 
     func testEventId() {

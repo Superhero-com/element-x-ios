@@ -67,7 +67,7 @@ struct HeaderView_Previews: PreviewProvider {
                              id: "test",
                              avatarSize: .room(on: .details),
                              imageProvider: MockMediaProvider(),
-                             subtitle: "#test:matrix.org") {
+                             subtitle: "#test:superhero.com") {
                 HStack(spacing: 32) {
                     ShareLink(item: "test") {
                         Image(systemName: "square.and.arrow.up")

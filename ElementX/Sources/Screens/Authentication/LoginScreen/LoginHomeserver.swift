@@ -54,7 +54,7 @@ struct LoginHomeserver: Equatable {
 extension LoginHomeserver {
     /// A mock homeserver that is configured just like matrix.org.
     static var mockMatrixDotOrg: LoginHomeserver {
-        LoginHomeserver(address: "matrix.org", loginMode: .password)
+        LoginHomeserver(address: "superhero.com", loginMode: .password)
     }
     
     /// A mock homeserver that supports login and registration via a password but has no SSO providers.

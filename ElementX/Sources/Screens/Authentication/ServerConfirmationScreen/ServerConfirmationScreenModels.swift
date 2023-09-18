@@ -45,7 +45,7 @@ struct ServerConfirmationScreenViewState: BindableState {
     var message: String {
         switch authenticationFlow {
         case .login:
-            if homeserverAddress == "matrix.org" {
+            if homeserverAddress == "superhero.com" {
                 return L10n.screenServerConfirmationMessageLoginMatrixDotOrg
             } else if homeserverAddress == "element.io" {
                 return L10n.screenServerConfirmationMessageLoginElementDotIo

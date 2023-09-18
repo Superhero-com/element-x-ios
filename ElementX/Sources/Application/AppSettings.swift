@@ -88,7 +88,7 @@ final class AppSettings {
     
     /// The default homeserver address used. This is intentionally a string without a scheme
     /// so that it can be passed to Rust as a ServerName for well-known discovery.
-    let defaultHomeserverAddress = "matrix.org"
+    let defaultHomeserverAddress = "superhero.com"
     
     /// An override of the homeserver's Sliding Sync proxy URL. This allows development against servers
     /// that don't yet have an officially trusted proxy configured in their well-known.

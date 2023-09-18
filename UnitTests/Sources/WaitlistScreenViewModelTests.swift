@@ -31,7 +31,7 @@ class WaitlistScreenViewModelTests: XCTestCase {
         XCTAssertNil(context.viewState.userSession, "No user session should be set on a new view model.")
         XCTAssertTrue(context.viewState.isWaiting, "The view should start off in the waiting state.")
         
-        viewModel.update(userSession: MockUserSession(clientProxy: MockClientProxy(userID: "@alice:matrix.org"),
+        viewModel.update(userSession: MockUserSession(clientProxy: MockClientProxy(userID: "@alice:superhero.com"),
                                                       mediaProvider: MockMediaProvider()))
         
         XCTAssertNotNil(context.viewState.userSession, "The user session should have been updated.")
