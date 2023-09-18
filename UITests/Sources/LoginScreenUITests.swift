@@ -25,7 +25,7 @@ class LoginScreenUITests: XCTestCase {
         try await app.assertScreenshot(.login)
         
         // When typing in a username and password.
-        app.textFields[A11yIdentifiers.loginScreen.emailUsername].clearAndTypeText("@test:matrix.org")
+        app.textFields[A11yIdentifiers.loginScreen.emailUsername].clearAndTypeText("@test:superhero.com")
         app.secureTextFields[A11yIdentifiers.loginScreen.password].clearAndTypeText("12345678")
         
         // Then the form should be ready to submit.

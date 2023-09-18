@@ -263,7 +263,7 @@
 "screen_create_poll_question_hint" = "Worum geht es bei der Umfrage?";
 "screen_create_poll_title" = "Umfrage erstellen";
 "screen_create_room_action_create_room" = "Neuer Raum";
-"screen_create_room_action_invite_people" = "Freunde zu Element einladen";
+"screen_create_room_action_invite_people" = "Freunde zu Superhero Chat einladen";
 "screen_create_room_add_people_title" = "Personen einladen";
 "screen_create_room_error_creating_room" = "Beim Erstellen des Raums ist ein Fehler aufgetreten";
 "screen_create_room_private_option_description" = "Die Nachrichten in diesem Raum sind verschlüsselt. Die Verschlüsselung kann nicht nachträglich deaktiviert werden.";
@@ -325,9 +325,9 @@
 "screen_onboarding_sign_in_with_qr_code" = "Mit QR-Code anmelden";
 "screen_onboarding_sign_up" = "Konto erstellen";
 "screen_onboarding_subtitle" = "Sicher kommunizieren und zusammenarbeiten";
-"screen_onboarding_welcome_message" = "Willkommen beim schnellsten Element aller Zeiten. Optimiert für Geschwindigkeit und Einfachheit.";
+"screen_onboarding_welcome_message" = "Willkommen beim schnellsten Superhero Chat aller Zeiten. Optimiert für Geschwindigkeit und Einfachheit.";
 "screen_onboarding_welcome_subtitle" = "Willkommen zu %1$@. Aufgeladen, für Geschwindigkeit und Einfachheit.";
-"screen_onboarding_welcome_title" = "Seien Sie in Ihrem Element";
+"screen_onboarding_welcome_title" = "Seien Sie in Ihrem Superhero Chat";
 "screen_report_content_block_user_hint" = "Prüfen Sie, ob Sie alle aktuellen und zukünftigen Nachrichten dieses Benutzers ausblenden möchten";
 "screen_room_attachment_source_camera" = "Kamera";
 "screen_room_attachment_source_camera_photo" = "Foto machen";
@@ -393,7 +393,7 @@
 "screen_roomlist_empty_title" = "Noch keine Chats.";
 "screen_roomlist_main_space_title" = "Alle Chats";
 "screen_server_confirmation_change_server" = "Kontoanbieter wechseln";
-"screen_server_confirmation_message_login_element_dot_io" = "Ein privater Server für die Mitarbeiter von Element.";
+"screen_server_confirmation_message_login_element_dot_io" = "Ein privater Server für die Mitarbeiter von Superhero Chat.";
 "screen_server_confirmation_message_login_matrix_dot_org" = "Matrix ist ein offenes Netzwerk für eine sichere, dezentrale Kommunikation.";
 "screen_server_confirmation_message_register" = "Hier werden Ihre Gespräche gespeichert - so wie Sie Ihre E-Mails bei einem E-Mail-Anbieter aufbewahren würden.";
 "screen_server_confirmation_title_login" = "Sie sind dabei, sich bei %1$@ anzumelden";

@@ -1,7 +1,7 @@
 blank_issues_enabled: true
 contact_links:
  - name: Matrix Community Support
-   url: "https://matrix.to/#/#matrix:matrix.org"
+   url: "https://matrix.to/#/#matrix:superhero.com"
    about: General support questions can be asked here.
  - name: Matrix Security Policy
    url: https://www.matrix.org/security-disclosure-policy/

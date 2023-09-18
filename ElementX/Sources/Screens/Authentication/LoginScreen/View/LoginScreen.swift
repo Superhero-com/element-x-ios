@@ -142,7 +142,7 @@ struct LoginScreen_Previews: PreviewProvider {
     
     static var previews: some View {
         screen(for: LoginScreenViewModel(homeserver: .mockMatrixDotOrg, slidingSyncLearnMoreURL: ServiceLocator.shared.settings.slidingSyncLearnMoreURL))
-            .previewDisplayName("matrix.org")
+            .previewDisplayName("superhero.com")
         screen(for: credentialsViewModel)
             .previewDisplayName("Credentials Entered")
         screen(for: LoginScreenViewModel(homeserver: .mockMatrixDotOrg, slidingSyncLearnMoreURL: ServiceLocator.shared.settings.slidingSyncLearnMoreURL))

@@ -24,7 +24,7 @@ class UserDiscoveryServiceTest: XCTestCase {
     var clientProxy: MockClientProxy!
     
     override func setUpWithError() throws {
-        clientProxy = .init(userID: "@foo:matrix.org")
+        clientProxy = .init(userID: "@foo:superhero.com")
         service = UserDiscoveryService(clientProxy: clientProxy)
     }
     
@@ -36,7 +36,7 @@ class UserDiscoveryServiceTest: XCTestCase {
     }
 
     func testOwnerIsFiltered() async throws {
-        clientProxy.searchUsersResult = .success(.init(results: [UserProfileProxy(userID: "@foo:matrix.org")], limited: true))
+        clientProxy.searchUsersResult = .success(.init(results: [UserProfileProxy(userID: "@foo:superhero.com")], limited: true))
 
         let results = await (try? search(query: "AAA").get()) ?? []
         assertSearchResults(results, toBe: 0)
@@ -44,7 +44,7 @@ class UserDiscoveryServiceTest: XCTestCase {
     
     func testGetProfileIsNotCalled() async {
         clientProxy.searchUsersResult = .success(.init(results: searchResults, limited: true))
-        clientProxy.getProfileResult = .success(.init(userID: "@alice:matrix.org"))
+        clientProxy.getProfileResult = .success(.init(userID: "@alice:superhero.com"))
         
         let results = await (try? search(query: "AAA").get()) ?? []
         assertSearchResults(results, toBe: 3)
@@ -53,16 +53,16 @@ class UserDiscoveryServiceTest: XCTestCase {
 
     func testGetProfileIsNotCalledForAccountOwnerID() async {
         clientProxy.searchUsersResult = .success(.init(results: searchResults, limited: true))
-        clientProxy.getProfileResult = .success(.init(userID: "@alice:matrix.org"))
+        clientProxy.getProfileResult = .success(.init(userID: "@alice:superhero.com"))
 
-        let results = await (try? search(query: "foo:matrix.org").get()) ?? []
+        let results = await (try? search(query: "foo:superhero.com").get()) ?? []
         assertSearchResults(results, toBe: 3)
         XCTAssertFalse(clientProxy.getProfileCalled)
     }
     
     func testLocalResultShows() async {
         clientProxy.searchUsersResult = .success(.init(results: searchResults, limited: true))
-        clientProxy.getProfileResult = .success(.init(userID: "@some:matrix.org"))
+        clientProxy.getProfileResult = .success(.init(userID: "@some:superhero.com"))
         
         let results = await (try? search(query: "@a:b.com").get()) ?? []
         
@@ -72,7 +72,7 @@ class UserDiscoveryServiceTest: XCTestCase {
     
     func testLocalResultShowsOnSearchError() async {
         clientProxy.searchUsersResult = .failure(.failedSearchingUsers)
-        clientProxy.getProfileResult = .success(.init(userID: "@some:matrix.org"))
+        clientProxy.getProfileResult = .success(.init(userID: "@some:superhero.com"))
         
         let results = await (try? search(query: "@a:b.com").get()) ?? []
         
@@ -82,7 +82,7 @@ class UserDiscoveryServiceTest: XCTestCase {
     
     func testSearchErrorTriggers() async {
         clientProxy.searchUsersResult = .failure(.failedSearchingUsers)
-        clientProxy.getProfileResult = .success(.init(userID: "@some:matrix.org"))
+        clientProxy.getProfileResult = .success(.init(userID: "@some:superhero.com"))
         
         switch await search(query: "some query") {
         case .success:
@@ -96,13 +96,13 @@ class UserDiscoveryServiceTest: XCTestCase {
     
     func testLocalResultWithDuplicates() async {
         clientProxy.searchUsersResult = .success(.init(results: searchResults, limited: true))
-        clientProxy.getProfileResult = .success(.init(userID: "@bob:matrix.org"))
+        clientProxy.getProfileResult = .success(.init(userID: "@bob:superhero.com"))
         
         let results = await (try? search(query: "@a:b.com").get()) ?? []
         
         assertSearchResults(results, toBe: 3)
         let firstUserID = results.first?.userID
-        XCTAssertEqual(firstUserID, "@bob:matrix.org")
+        XCTAssertEqual(firstUserID, "@bob:superhero.com")
         XCTAssertTrue(clientProxy.getProfileCalled)
     }
     

@@ -19,22 +19,22 @@ import Foundation
 extension UserProfileProxy {
     // Mocks
     static var mockAlice: UserProfileProxy {
-        .init(userID: "@alice:matrix.org", displayName: "Alice", avatarURL: "mxc://matrix.org/UcCimidcvpFvWkPzvjXMQPHA")
+        .init(userID: "@alice:superhero.com", displayName: "Alice", avatarURL: "mxc://matrix.org/UcCimidcvpFvWkPzvjXMQPHA")
     }
 
     static var mockBob: UserProfileProxy {
-        .init(userID: "@bob:matrix.org", displayName: "Bob", avatarURL: nil)
+        .init(userID: "@bob:superhero.com", displayName: "Bob", avatarURL: nil)
     }
 
     static var mockBobby: UserProfileProxy {
-        .init(userID: "@bobby:matrix.org", displayName: "Bobby", avatarURL: nil)
+        .init(userID: "@bobby:superhero.com", displayName: "Bobby", avatarURL: nil)
     }
 
     static var mockCharlie: UserProfileProxy {
-        .init(userID: "@charlie:matrix.org", displayName: "Charlie", avatarURL: nil)
+        .init(userID: "@charlie:superhero.com", displayName: "Charlie", avatarURL: nil)
     }
     
     static var mockVerbose: UserProfileProxy {
-        .init(userID: "@charlie:matrix.org", displayName: "Charlie is the best display name", avatarURL: nil)
+        .init(userID: "@charlie:superhero.com", displayName: "Charlie is the best display name", avatarURL: nil)
     }
 }

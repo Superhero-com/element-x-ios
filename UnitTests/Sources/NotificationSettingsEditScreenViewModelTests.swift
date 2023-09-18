@@ -210,7 +210,7 @@ class NotificationSettingsEditScreenViewModelTests: XCTestCase {
     }
     
     func testSelectRoom() async throws {
-        let roomID = "!roomidentifier:matrix.org"
+        let roomID = "!roomidentifier:superhero.com"
         viewModel = NotificationSettingsEditScreenViewModel(chatType: .oneToOneChat,
                                                             userSession: userSession,
                                                             notificationSettingsProxy: notificationSettingsProxy)

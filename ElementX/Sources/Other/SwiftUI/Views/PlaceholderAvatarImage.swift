@@ -69,19 +69,19 @@ struct PlaceholderAvatarImage: View {
 struct PlaceholderAvatarImage_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 75) {
-            PlaceholderAvatarImage(name: "Xavier", contentID: "@userid1:matrix.org")
+            PlaceholderAvatarImage(name: "Xavier", contentID: "@userid1:superhero.com")
                 .clipShape(Circle())
                 .frame(width: 150, height: 100)
             
-            PlaceholderAvatarImage(name: "@*~AmazingName~*@", contentID: "@userid2:matrix.org")
+            PlaceholderAvatarImage(name: "@*~AmazingName~*@", contentID: "@userid2:superhero.com")
                 .clipShape(Circle())
                 .frame(width: 150, height: 100)
             
-            PlaceholderAvatarImage(name: nil, contentID: "@userid3:matrix.org")
+            PlaceholderAvatarImage(name: nil, contentID: "@userid3:superhero.com")
                 .clipShape(Circle())
                 .frame(width: 150, height: 100)
             
-            PlaceholderAvatarImage(name: nil, contentID: "@fooserid:matrix.org")
+            PlaceholderAvatarImage(name: nil, contentID: "@fooserid:superhero.com")
                 .clipShape(Circle())
                 .frame(width: 30, height: 30)
         }

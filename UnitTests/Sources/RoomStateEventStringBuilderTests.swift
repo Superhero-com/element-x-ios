@@ -23,7 +23,7 @@ class RoomStateEventStringBuilderTests: XCTestCase {
     var stringBuilder: RoomStateEventStringBuilder!
     
     override func setUp() {
-        userID = "@alice:matrix.org"
+        userID = "@alice:superhero.com"
         stringBuilder = RoomStateEventStringBuilder(userID: userID)
     }
     
@@ -37,7 +37,7 @@ class RoomStateEventStringBuilderTests: XCTestCase {
                                   expectedString: L10n.stateEventDisplayNameSetByYou("Alice"))
         
         // Changes by someone else.
-        let senderID = "@bob:matrix.org"
+        let senderID = "@bob:superhero.com"
         validateDisplayNameChange(senderID: senderID, oldName: "Bob", newName: "Alice",
                                   expectedString: L10n.stateEventDisplayNameChangedFrom(senderID, "Bob", "Alice"))
         validateDisplayNameChange(senderID: senderID, oldName: "Bob", newName: nil,
@@ -67,7 +67,7 @@ class RoomStateEventStringBuilderTests: XCTestCase {
                              expectedString: L10n.stateEventAvatarUrlChangedByYou)
         
         // Changes by someone else.
-        let senderID = "@bob:matrix.org"
+        let senderID = "@bob:superhero.com"
         let senderName = "Bob"
         validateAvatarChange(senderID: senderID, senderName: senderName, oldAvatarURL: "mxc://1", newAvatarURL: "mxc://2",
                              expectedString: L10n.stateEventAvatarUrlChanged(senderName))

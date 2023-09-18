@@ -19,7 +19,7 @@ import Foundation
 extension AggregatedReaction {
     private static func mockIds(_ count: Int) -> [String] {
         Array(1...count).map {
-            "@user\($0):matrix.org"
+            "@user\($0):superhero.com"
         }
     }
     

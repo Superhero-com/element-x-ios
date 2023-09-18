@@ -90,7 +90,7 @@ class AttributedStringBuilderTests: XCTestCase {
         
         let link = attributedString.runs.first(where: { $0.link != nil })?.link
         
-        XCTAssertEqual(link?.host, "www.matrix.org")
+        XCTAssertEqual(link?.host, "www.superhero.com")
     }
     
     func testRenderPlainStringWithLink() {
@@ -107,7 +107,7 @@ class AttributedStringBuilderTests: XCTestCase {
         
         let link = attributedString.runs.first(where: { $0.link != nil })?.link
         
-        XCTAssertEqual(link?.host, "www.matrix.org")
+        XCTAssertEqual(link?.host, "www.superhero.com")
     }
     
     func testLinkDefaultScheme() {
@@ -124,7 +124,7 @@ class AttributedStringBuilderTests: XCTestCase {
         
         let link = attributedString.runs.first(where: { $0.link != nil })?.link
         
-        XCTAssertEqual(link, "https://matrix.org")
+        XCTAssertEqual(link, "https://superhero.com")
     }
     
     func testRenderHTMLStringWithLinkInHeader() {
@@ -160,9 +160,9 @@ class AttributedStringBuilderTests: XCTestCase {
         XCTAssert(h1Font.pointSize > UIFont.preferredFont(forTextStyle: .body).pointSize)
         XCTAssert(h1Font.pointSize <= maxHeaderPointSize)
         
-        XCTAssertEqual(h1AttributedString.runs.first?.link?.host, "www.matrix.org")
-        XCTAssertEqual(h2AttributedString.runs.first?.link?.host, "www.matrix.org")
-        XCTAssertEqual(h3AttributedString.runs.first?.link?.host, "www.matrix.org")
+        XCTAssertEqual(h1AttributedString.runs.first?.link?.host, "www.superhero.com")
+        XCTAssertEqual(h2AttributedString.runs.first?.link?.host, "www.superhero.com")
+        XCTAssertEqual(h3AttributedString.runs.first?.link?.host, "www.superhero.com")
     }
     
     func testRenderHTMLStringWithIFrame() {
@@ -183,27 +183,27 @@ class AttributedStringBuilderTests: XCTestCase {
     }
     
     func testPermalink() {
-        let string = "https://matrix.to/#/!hello:matrix.org/$world?via=matrix.org"
+        let string = "https://matrix.to/#/!hello:matrix.org/$world?via=superhero.com"
         checkLinkIn(attributedString: attributedStringBuilder.fromHTML(string), expectedLink: string, expectedRuns: 1)
         checkLinkIn(attributedString: attributedStringBuilder.fromPlain(string), expectedLink: string, expectedRuns: 1)
     }
     
     func testUserIdLink() {
-        let userId = "@user:matrix.org"
+        let userId = "@user:superhero.com"
         let string = "The user is \(userId)."
         checkLinkIn(attributedString: attributedStringBuilder.fromHTML(string), expectedLink: userId, expectedRuns: 3)
         checkLinkIn(attributedString: attributedStringBuilder.fromPlain(string), expectedLink: userId, expectedRuns: 3)
     }
     
     func testRoomAliasLink() {
-        let roomAlias = "#matrix:matrix.org"
+        let roomAlias = "#matrix:superhero.com"
         let string = "The room alias is \(roomAlias)."
         checkLinkIn(attributedString: attributedStringBuilder.fromHTML(string), expectedLink: roomAlias, expectedRuns: 3)
         checkLinkIn(attributedString: attributedStringBuilder.fromPlain(string), expectedLink: roomAlias, expectedRuns: 3)
     }
     
     func testRoomIdLink() {
-        let roomId = "!roomidentifier:matrix.org"
+        let roomId = "!roomidentifier:superhero.com"
         let string = "The room is \(roomId)."
         checkLinkIn(attributedString: attributedStringBuilder.fromHTML(string), expectedLink: roomId, expectedRuns: 3)
         checkLinkIn(attributedString: attributedStringBuilder.fromPlain(string), expectedLink: roomId, expectedRuns: 3)
@@ -261,7 +261,7 @@ class AttributedStringBuilderTests: XCTestCase {
         var foundLink = false
         for run in attributedString.runs {
             if run.link != nil {
-                XCTAssertEqual(run.link?.host, "www.matrix.org")
+                XCTAssertEqual(run.link?.host, "www.superhero.com")
                 XCTAssertNil(run.uiKit.foregroundColor)
                 foundLink = true
             } else {

@@ -85,7 +85,7 @@ struct TimelineReplyView: View {
     
     private struct LoadingReplyView: View {
         var body: some View {
-            ReplyView(sender: .init(id: "@alice:matrix.org"), plainBody: "Hello world", formattedBody: nil)
+            ReplyView(sender: .init(id: "@alice:superhero.com"), plainBody: "Hello world", formattedBody: nil)
                 .redacted(reason: .placeholder)
         }
     }
